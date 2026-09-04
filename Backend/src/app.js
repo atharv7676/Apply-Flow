@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors"
 import cookieParser from "cookie-parser";
-import healthRoute from "./routes/healthCheckRoute.js"
+import healthRoute from "./routes/healthRoute.js"
 
 const app = express();
 
