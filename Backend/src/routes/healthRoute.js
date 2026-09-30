@@ -1,4 +1,4 @@
-import { healthcheck } from "../controllers/health.js";
+import { healthcheck } from "../controllers/health.controller.js";
 import express from "express";
  
 
