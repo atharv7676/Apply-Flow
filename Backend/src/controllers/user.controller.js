@@ -1,6 +1,6 @@
 import asyncHandler from "../middleware/asyncHandler.js";
 import User from "../models/user.model.js";
-import {accessToken, refreshToken} from "../utils/generateTokens.js";
+import { accessToken, refreshToken } from "../utils/generateTokens.js";
 
 const registerUser = asyncHandler(async (req, res) => {
 
@@ -19,7 +19,7 @@ const registerUser = asyncHandler(async (req, res) => {
         email,
         name,
         password,
-        
+
     })
 
     const registeredUser = {
@@ -58,9 +58,9 @@ const loginUser = asyncHandler(async (req, res) => {
 
 
     const options = {
-        httpOnly:true,
-        secure:true,
-        sameSite:"none"
+        httpOnly: true,
+        secure: true,
+        sameSite: "none"
     }
     res.cookie(
         "refreshToken",
@@ -84,4 +84,15 @@ const loginUser = asyncHandler(async (req, res) => {
 })
 
 
-export default { registerUser, loginUser };
+const getMe = asyncHandler(async (req, res) => {
+    const {name, role, email} = req.user;
+
+    res.status(200).json({
+        success:true,
+        data:{name, role, email},
+        message : "data fetched successfully"
+    })
+});
+
+
+export { registerUser, loginUser, getMe };

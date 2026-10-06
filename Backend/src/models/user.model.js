@@ -4,19 +4,19 @@ import bcrypt from "bcryptjs"
 
 const UserSchema = new Schema({
     name :{
-        type : String,
+        type:String,
         required : true,
         trim : true,
     },
     email :{
-        type : String,
+        type:String,
         required : true,
         trim : true,
         lowercase : true,
         unique : true,
     },
     password :{
-        type : String,
+        type:String,
         required : true,
         trim : true,
     },

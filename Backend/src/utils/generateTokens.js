@@ -29,4 +29,4 @@ const refreshToken = (userId)=>{
     )
 }
 
-export default {accessToken, refreshToken};
+export  {accessToken, refreshToken};
